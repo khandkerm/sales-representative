@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>Add New Store</title>
+<link rel="shortcut icon" type="imgae/jpg"
+	href="/assets/img/avatars/avatar1.jpeg">
+<link rel="stylesheet"
+	href="/assets/bootstrap/css/bootstrap.min.css?h=a9a31ec932de3114d9b1ed27688edc60">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" />
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css" />
+<!-- ===== CSS ===== -->
+<!-- <link rel="stylesheet" href="/assets/css/styles.css"> -->
+
+<!-- Icon link added -->
+<script src="https://kit.fontawesome.com/c598047e8f.js"
+	crossorigin="anonymous"></script>
+</head>
+
+<body id="page-top">
+	<div id="wrapper">
+		<nav
+			class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion p-0">
+			<div class="container-fluid d-flex flex-column p-0">
+				<a
+					class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
+					href="/Admin.html">
+					<div class="sidebar-brand-icon rotate-n-15">
+						<i class="fas fa-laugh-wink"></i>
+					</div>
+					<div class="sidebar-brand-text mx-3">
+						<span>Akij Group</span>
+					</div>
+				</a>
+				<hr class="sidebar-divider my-0">
+				<ul class="nav navbar-nav text-light" id="accordionSidebar">
+					<li class="nav-item"><a class="nav-link active"
+						href="/Admin.html"><i class="fas fa-tachometer-alt"></i>&nbsp;&nbsp;<span>Dashboard</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/Employee.html"><i
+							class="fas fa-user"></i>&nbsp;&nbsp;<span>Employee</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/Products.html"><i
+							class="fas fa-table"></i>&nbsp;&nbsp;<span>Products</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="/Location.html"><i
+							class="far fa-user-circle"></i>&nbsp;&nbsp;<span>Location</span></a></li>
+					<!-- <li class="nav-item"><a class="nav-link" href="/register.html"><i
+                                    class="fas fa-user-circle"></i><span>Register</span></a></li> -->
+				</ul>
+				<div class="text-center d-none d-md-inline"></div>
+			</div>
+		</nav>
+		<div class="d-flex flex-column" id="content-wrapper">
+			<div id="content">
+				<nav
+					class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+					<div class="container-fluid">
+						<button class="btn btn-link rounded-circle mr-3"
+							id="sidebarToggleTop" type="button">
+							<i class="fas fa-bars"></i>
+						</button>
+						<form
+							class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+							<div class="input-group">
+								<input class="bg-light form-control border-0 small" type="text"
+									placeholder="Search for ...">
+								<div class="input-group-append">
+									<button class="btn btn-primary py-0" type="button">
+										<i class="fas fa-search"></i>
+									</button>
+								</div>
+							</div>
+						</form>
+						<ul class="nav navbar-nav flex-nowrap ml-auto">
+							<li class="nav-item dropdown d-sm-none no-arrow"><a
+								class="dropdown-toggle nav-link" data-toggle="dropdown"
+								aria-expanded="false" href="#"><i class="fas fa-search"></i></a>
+								<div
+									class="dropdown-menu dropdown-menu-right p-3 animated--grow-in"
+									aria-labelledby="searchDropdown">
+									<form class="form-inline mr-auto navbar-search w-100">
+										<div class="input-group">
+											<input class="bg-light form-control border-0 small"
+												type="text" placeholder="Search for ...">
+											<div class="input-group-append">
+												<button class="btn btn-primary py-0" type="button">
+													<i class="fas fa-search"></i>
+												</button>
+											</div>
+										</div>
+									</form>
+								</div></li>
+							<li class="nav-item dropdown no-arrow mx-1">
+								<div class="nav-item dropdown no-arrow">
+									<a class="dropdown-toggle nav-link" data-toggle="dropdown"
+										aria-expanded="false" href="#"><span
+										class="badge badge-danger badge-counter">3+</span><i
+										class="fas fa-bell fa-fw"></i></a>
+									<div
+										class="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in">
+										<h6 class="dropdown-header">alerts center</h6>
+										<a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="mr-3">
+												<div class="bg-primary icon-circle">
+													<i class="fas fa-file-alt text-white"></i>
+												</div>
+											</div>
+											<div>
+												<span class="small text-gray-500">December 12, 2019</span>
+												<p>A new monthly report is ready to download!</p>
+											</div>
+										</a> <a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="mr-3">
+												<div class="bg-success icon-circle">
+													<i class="fas fa-donate text-white"></i>
+												</div>
+											</div>
+											<div>
+												<span class="small text-gray-500">December 7, 2019</span>
+												<p>$290.29 has been deposited into your account!</p>
+											</div>
+										</a> <a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="mr-3">
+												<div class="bg-warning icon-circle">
+													<i class="fas fa-exclamation-triangle text-white"></i>
+												</div>
+											</div>
+											<div>
+												<span class="small text-gray-500">December 2, 2019</span>
+												<p>Spending Alert: We've noticed unusually high spending
+													for your account.</p>
+											</div>
+										</a><a class="text-center dropdown-item small text-gray-500"
+											href="#">Show All Alerts</a>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown no-arrow mx-1">
+								<div class="nav-item dropdown no-arrow">
+									<a class="dropdown-toggle nav-link" data-toggle="dropdown"
+										aria-expanded="false" href="#"><i
+										class="fas fa-envelope fa-fw"></i><span
+										class="badge badge-danger badge-counter">7</span></a>
+									<div
+										class="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in">
+										<h6 class="dropdown-header">alerts center</h6>
+										<a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="dropdown-list-image mr-3">
+												<img class="rounded-circle"
+													src="/assets/img/avatars/avatar4.jpeg?h=fefb30b61c8459a66bd338b7d790c3d5">
+												<div class="bg-success status-indicator"></div>
+											</div>
+											<div class="font-weight-bold">
+												<div class="text-truncate">
+													<span>Hi there! I am wondering if you can help me
+														with a problem I've been having.</span>
+												</div>
+												<p class="small text-gray-500 mb-0">Emily Fowler - 58m</p>
+											</div>
+										</a> <a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="dropdown-list-image mr-3">
+												<img class="rounded-circle"
+													src="/assets/img/avatars/avatar1.jpeg">
+												<div class="status-indicator"></div>
+											</div>
+											<div class="font-weight-bold">
+												<div class="text-truncate">
+													<span>I have the photos that you ordered last month!</span>
+												</div>
+												<p class="small text-gray-500 mb-0">Jae Chun - 1d</p>
+											</div>
+										</a> <a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="dropdown-list-image mr-3">
+												<img class="rounded-circle"
+													src="/assets/img/avatars/avatar3.jpeg?h=c5166867f10a4e454b5b2ae8d63268b3">
+												<div class="bg-warning status-indicator"></div>
+											</div>
+											<div class="font-weight-bold">
+												<div class="text-truncate">
+													<span>Last month's report looks great, I am very
+														happy with the progress so far, keep up the good work!</span>
+												</div>
+												<p class="small text-gray-500 mb-0">Morgan Alvarez - 2d</p>
+											</div>
+										</a> <a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="dropdown-list-image mr-3">
+												<img class="rounded-circle"
+													src="/assets/img/avatars/avatar5.jpeg?h=35dc45edbcda6b3fc752dab2b0f082ea">
+												<div class="bg-success status-indicator"></div>
+											</div>
+											<div class="font-weight-bold">
+												<div class="text-truncate">
+													<span>Am I a good boy? The reason I ask is because
+														someone told me that people say this to all dogs, even if
+														they aren't good...</span>
+												</div>
+												<p class="small text-gray-500 mb-0">Chicken the Dog · 2w</p>
+											</div>
+										</a><a class="text-center dropdown-item small text-gray-500"
+											href="#">Show All Alerts</a>
+									</div>
+								</div>
+								<div
+									class="shadow dropdown-list dropdown-menu dropdown-menu-right"
+									aria-labelledby="alertsDropdown"></div>
+							</li>
+							<div class="d-none d-sm-block topbar-divider"></div>
+							<li class="nav-item dropdown no-arrow">
+								<div class="nav-item dropdown no-arrow">
+									<a class="dropdown-toggle nav-link" data-toggle="dropdown"
+										aria-expanded="false" href="#"><span
+										class="d-none d-lg-inline mr-2 text-gray-600 small">Valerie
+											Luna</span><img class="border rounded-circle img-profile"
+										src="/assets/img/avatars/avatar2.jpeg?h=0ecc82101fb9a10ca459432faa8c0656"></a>
+									<div
+										class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
+										<a class="dropdown-item" href="#"><i
+											class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a
+											class="dropdown-item" href="#"><i
+											class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
+										<a class="dropdown-item" href="#"><i
+											class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity
+											log</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#"><i
+											class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<div class="container-fluid">
+					<div
+						class="d-sm-flex justify-content-between align-items-center mb-4">
+						<h3 class="text-dark mb-0">Add New Store</h3>
+					</div>
+
+					<div class="row text-dark">
+						<div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
+							<div class="card shadow" style="margin-bottom: 2rem;">
+								<div class="card-body">
+									<form th:action="@{/addNewStore_update}" method="post"
+										th:object="${insert_store}">
+
+
+										<div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+											<!--                                                 <label for="inputEmail4">Emplyee_Id</label> -->
+											<input hidden type="text" name="DB_POINT_ID"
+												th:value="*{DB_POINT_ID}" class="form-control">
+										</div>
+										<div class="form-row">
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label>DB Point Name</label> <input type="text"
+													class="form-control" name="DB_POINT_DESCR"
+													th:value="*{DB_POINT_DESCR}" th:disabled="${check}">
+											</div>
+
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label>DB Point Type</label>
+												<!-- 												<input type="text" class="form-control"> -->
+												<select name="DB_POINT_TYPE_CODE" class="form-control"
+													id="dbtype_id" th:disabled="${flag}">
+													<option value='0'>Select DB Point Type</option>
+													<option th:each="p : ${showList_dbPointType}"
+														th:selected="(${p.DB_POINT_TYPE_CODE} == *{DB_POINT_TYPE_CODE})"
+														th:value="${p.DB_POINT_TYPE_CODE}"
+														th:text="${p.DB_POINT_TYPE_DESCR}" />
+												</select>
+
+
+											</div>
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label>Parent DB Point</label>
+												<!-- 												<input type="text" class="form-control"> -->
+												<select name="PARENT_DB_POINT_ID" class="form-control"
+													id="parentdbtype_id" th:disabled="${flag}">
+													<option value='0'>Select Parent Db Point</option>
+													<option th:each="p : ${ParentDbPointlist}"
+														th:selected="(${p.DB_POINT_ID} == *{PARENT_DB_POINT_ID})"
+														th:value="${p.DB_POINT_ID}" th:text="${p.DB_POINT_DESCR}" />
+
+
+												</select>
+
+											</div>
+
+										</div>
+
+
+										<div class="form-row my-3">
+
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+
+
+												<label>Division Description</label>
+												<!-- 												<input type="text" class="form-control"> -->
+
+												<select name="DIV_CODE" class="form-control"
+													id="division_id" th:disabled="${check}">
+													<option value='0'>Select Division</option>
+													<option th:each="p : ${showList_division}"
+														th:selected="(${p.DIV_CODE} == *{DIV_CODE})"
+														th:value="${p.DIV_CODE}" th:text="${p.DIV_DESC}" />
+												</select>
+											</div>
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label>District Description</label>
+												<!-- 												<input type="text" class="form-control"> -->
+
+												<select name="DIST_CODE" class="form-control"
+													id="district_id" th:disabled="${check}">
+													<option value='0'>Select District</option>
+													<option th:each="p : ${showList_district}"
+														th:selected="(${p.DIST_CODE} == *{DIST_CODE})"
+														th:value="${p.DIST_CODE}" th:text="${p.DIST_DESCR}" />
+												</select>
+											</div>
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label>Thana Description</label>
+												<!-- 												<input type="text" class="form-control"> -->
+
+
+												<select name="THANA_CODE" class="form-control" id="thana_id"
+													th:disabled="${check}">
+													<option value='0'>Select Thana</option>
+													<option th:each="p : ${ThanaList}"
+														th:selected="(${p.THANA_CODE} == *{THANA_CODE})"
+														th:value="${p.THANA_CODE}" th:text="${p.THANA_DESCR}" />
+
+												</select>
+											</div>
+										</div>
+
+										<div class="form-row my-3">
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label>Zip Description</label>
+												<!-- 												<input type="text" class="form-control"> -->
+
+
+												<select name="ZIP_CODE" class="form-control" id="zip_id"
+													th:disabled="${check}">
+													<option value='0'>Select ZIP Area</option>
+													<option th:each="p : ${ZipList}"
+														th:selected="(${p.ZIP_CODE} == *{ZIP_CODE})"
+														th:value="${p.ZIP_CODE}" th:text="${p.AREA_DESCR}" />
+												</select>
+
+											</div>
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label>Email Address</label> <input type="text" name="Email"
+													th:value="*{Email}" class="form-control"
+													th:disabled="${check}">
+											</div>
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label>Website Address</label> <input type="text"
+													name="Webadd" th:value="*{Webadd}" class="form-control"
+													th:disabled="${check}">
+											</div>
+										</div>
+
+										<div class="form-row my-3">
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label>Contact Person (1)</label> <input type="text"
+													name="CONT_PERSION1" th:value="*{CONT_PERSION1}"
+													class="form-control" th:disabled="${check}">
+											</div>
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label>Phone Number (1)</label> <input type="text"
+													name="MOBILE1" th:value="*{MOBILE1}" class="form-control"
+													th:disabled="${check}">
+											</div>
+											<!-- <div class="col-lg-1 col-xl-1"></div> -->
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label>Area (1)</label> <input type="text" name="ADDR1"
+													th:value="*{ADDR1}" class="form-control"
+													th:disabled="${check}">
+											</div>
+										</div>
+
+										<div class="form-row my-3">
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label>Contact Person (2)</label> <input type="text"
+													name="CONT_PERSION2" th:value="*{CONT_PERSION2}"
+													class="form-control" th:disabled="${check}">
+											</div>
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label>Phone Number (2)</label> <input type="text"
+													name="MOBILE2" th:value="*{MOBILE2}" class="form-control"
+													th:disabled="${check}">
+											</div>
+											<!-- <div class="col-lg-1 col-xl-1"></div> -->
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label>Area (2)</label> <input type="text" name="ADDR2"
+													th:value="*{ADDR2}" class="form-control"
+													th:disabled="${check}">
+											</div>
+										</div>
+
+										<div class="form-row my-3">
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label>Trade LIC Number</label> <input type="text"
+													name="TRADE_LIC_NO" th:value="*{TRADE_LIC_NO}"
+													class="form-control" th:disabled="${check}">
+											</div>
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label>Vat Registration Number</label> <input type="text"
+													name="VAT_REG_NO" th:value="*{VAT_REG_NO}"
+													class="form-control" th:disabled="${check}">
+											</div>
+
+											<div class="col-lg-4 col-xl-4"></div>
+										</div>
+										<div class="form-row my-3">
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label class="form-label" for="tradeImage">Trade LIC
+													Image </label> <br> <input type="file" id="tradeImage"
+													th:disabled="${check}">
+											</div>
+
+
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label class="form-label" for="vatImages">Vat
+													Registration Image </label> <br> <input type="file"
+													id="vatImage" th:disabled="${check}">
+											</div>
+
+											<div class="col-lg-4 col-xl-4 col-md-6 col-sm-6">
+												<label class="form-label" for="dbPointImage">DB
+													Point Image</label> <br> <input type="file" id="dbPointImage">
+											</div>
+											<!-- 											<div class="col-lg-4 col-xl-4"></div> -->
+										</div>
+								</div>
+								<div class="col center1 mt-3"
+									style="display: flex; justify-content: center;">
+
+									<input class="btn btn-primary" type="submit"
+										th:if="${flag == 1}" value="Add"
+										style="border-radius: 0.3rem; margin-bottom: 1rem;"></input> <input
+										class="btn btn-primary" type="submit"
+										th:formaction="@{'/addNewStore/edit/' + ${id}}"
+										th:if="${flag == 0}" value="Edit"
+										style="border-radius: 0.3rem;"></input>
+
+									<!--                                         <input hidden type="text" class="btn btn-primary" type="submit" th:formaction="@{'/addNewStore/view/' + ${id}}" th:if="${flag == 1}" value="Edit" -->
+									<!--                                                 style="border-radius: 0.3rem;"></input> -->
+								</div>
+
+								</form>
+
+							</div>
+
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 mb-4">
+							<div class="card shadow"
+								style="overflow-x: auto; text-align: center; padding: 1rem;">
+								<table class="table table-bordered table-striped table-hover"
+									id="myTable" style="color: black;">
+									<thead class="thead">
+										<tr>
+											<th scope="col" width="25%">Store Name</th>
+											<th scope="col" width="25%">Store Type</th>
+											<th scope="col" width="25%">Parent Store Name</th>
+											<th scope="col" width="25%">Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="show : ${showList_shop_update}">
+											<td th:text="${show.DB_POINT_DESCR}"></td>
+											<td th:text="${show.DB_POINT_TYPE_DESCR}"></td>
+											<td th:text="${show.Parent_DB_POINT_DESCR}"></td>
+
+											<td>
+												<!--                                                 <button type="button" class="btn btn-primary btn-sm" onclick="" -->
+												<!--                                                     style="display:inline-block;margin:0 0.3em 0.3em 0; width:4rem;">View</button> -->
+												<a class="btn btn-primary btn-sm"
+												style="display: inline-block; margin: 0 0.3em 0.3em 0; width: 4rem;"
+												th:href="@{'/addNewStore_update/view/'+ ${show.DB_POINT_ID} }">View</a>
+												<button type="button" class="btn btn-primary btn-sm"
+													onclick=""
+													style="display: inline-block; margin: 0 0.3em 0.3em 0; width: 4rem;">Edit</button>
+											</td>
+										</tr>
+
+
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--===== MAIN JS =====-->
+	<script src="assets/js/main.js"></script>
+	<!-- Optional JavaScript; choose one of the two! -->
+
+	<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+	<script
+		src="/assets/js/script.min.js?h=af3a23ce326fbc8eb447b5418ddb619e"></script>
+	<script type="text/javascript" charset="utf8"
+		src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+	<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable();
+    });
+</script>
+
+
+
+	<script>
+		$(document)
+				.ready(
+						function() {
+							$("#dbtype_id")
+									.change(
+											function() {
+
+												$("#parentdbtype_id").empty();
+
+												var x = $("#dbtype_id").val();
+												console.log(x);
+
+												if (x == "0") {
+													$("#parentdbtype_id")
+															.empty();
+													$("<option>")
+															.val("0")
+															.text(
+																	"Select Parent Db Point")
+															.appendTo(
+																	ParentDbPoint_Dropdown);
+												} else {
+
+													var urlString = "/add_ParentDbPoint/"
+															+ x;
+													console.log(urlString);
+
+													$
+															.ajax({
+																method : "GET",
+																url : urlString
+															})
+															.done(
+																	function(
+																			responseJson) {
+
+																		ParentDbPoint_Dropdown = $("#parentdbtype_id");
+
+																		$(
+																				"<option>")
+																				.val(
+																						"0")
+																				.text(
+																						"Select Parent Db Point")
+																				.appendTo(
+																						ParentDbPoint_Dropdown);
+																		$
+																				.each(
+																						responseJson,
+																						function(
+																								index,
+																								parent) {
+
+																							$(
+																									"<option>")
+																									.val(
+																											parent.db_POINT_ID)
+																									.text(
+																											parent.db_POINT_DESCR)
+																									.appendTo(
+																											ParentDbPoint_Dropdown);
+																						});
+																	})
+															.fail(
+																	function() {
+																		alert("Connection Error");
+																	})
+												}
+
+											})
+						})
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+	<!-- District Dropdown -->
+
+
+	<script>
+		$(document)
+				.ready(
+						function() {
+							$("#division_id")
+									.change(
+											function() {
+
+												$("#district_id").empty();
+
+												var x = $("#division_id").val();
+												console.log(x);
+
+												if (x == "0") {
+													$("#district_id").empty();
+													$("<option>")
+															.val("0")
+															.text(
+																	"Select District")
+															.appendTo(
+																	District_Dropdown);
+												} else {
+
+													var urlString = "/add_district/"
+															+ x;
+													console.log(urlString);
+
+													$
+															.ajax({
+																method : "GET",
+																url : urlString
+															})
+															.done(
+																	function(
+																			responseJson) {
+
+																		District_Dropdown = $("#district_id");
+
+																		$(
+																				"<option>")
+																				.val(
+																						"0")
+																				.text(
+																						"Select District")
+																				.appendTo(
+																						District_Dropdown);
+																		$
+																				.each(
+																						responseJson,
+																						function(
+																								index,
+																								parent) {
+
+																							$(
+																									"<option>")
+																									.val(
+																											parent.dist_CODE)
+																									.text(
+																											parent.dist_DESCR)
+																									.appendTo(
+																											District_Dropdown);
+																						});
+																	})
+															.fail(
+																	function() {
+																		alert("Connection Error");
+																	})
+												}
+
+											})
+						})
+	</script>
+	<!-- 		Dirstrict dropdown ends  -->
+
+	<!-- Thana DropDown Start -->
+
+
+
+
+	<script>
+		$(document)
+				.ready(
+						function() {
+							$("#district_id")
+									.change(
+											function() {
+
+												$("#thana_id").empty();
+
+												var x = $("#district_id").val();
+												console.log(x);
+
+												if (x == "0") {
+													$("#thana_id").empty();
+													$("<option>")
+															.val("0")
+															.text(
+																	"Select District")
+															.appendTo(
+																	Thana_Dropdown);
+												} else {
+
+													var urlString = "/add_thana/"
+															+ x;
+													console.log(urlString);
+
+													$
+															.ajax({
+																method : "GET",
+																url : urlString
+															})
+															.done(
+																	function(
+																			responseJson) {
+
+																		Thana_Dropdown = $("#thana_id");
+
+																		$(
+																				"<option>")
+																				.val(
+																						"0")
+																				.text(
+																						"Select District")
+																				.appendTo(
+																						Thana_Dropdown);
+																		$
+																				.each(
+																						responseJson,
+																						function(
+																								index,
+																								parent) {
+
+																							$(
+																									"<option>")
+																									.val(
+																											parent.thana_CODE)
+																									.text(
+																											parent.thana_DESCR)
+																									.appendTo(
+																											Thana_Dropdown);
+																						});
+																	})
+															.fail(
+																	function() {
+																		alert("Connection Error");
+																	})
+												}
+
+											})
+						})
+	</script>
+
+
+	<!-- Thana Dropdown Ends -->
+
+
+
+	<!-- Zip Dropdown Start -->
+
+	<script>
+		$(document)
+				.ready(
+						function() {
+							$("#district_id")
+									.change(
+											function() {
+
+												$("#zip_id").empty();
+
+												var x = $("#district_id").val();
+												console.log(x);
+
+												if (x == "0") {
+													$("#zip_id").empty();
+													$("<option>")
+															.val("0")
+															.text(
+																	"Select Zip Area")
+															.appendTo(
+																	Zip_Dropdown);
+												} else {
+
+													var urlString = "/add_Zip/"
+															+ x;
+													console.log(urlString);
+
+													$
+															.ajax({
+																method : "GET",
+																url : urlString
+															})
+															.done(
+																	function(
+																			responseJson) {
+
+																		Zip_Dropdown = $("#zip_id");
+
+																		$(
+																				"<option>")
+																				.val(
+																						"0")
+																				.text(
+																						"Select Zip Area")
+																				.appendTo(
+																						Zip_Dropdown);
+																		$
+																				.each(
+																						responseJson,
+																						function(
+																								index,
+																								parent) {
+
+																							$(
+																									"<option>")
+																									.val(
+																											parent.zip_CODE)
+																									.text(
+																											parent.area_DESCR)
+																									.appendTo(
+																											Zip_Dropdown);
+																						});
+																	})
+															.fail(
+																	function() {
+																		alert("Connection Error");
+																	})
+												}
+
+											})
+						})
+	</script>
+
+
+
+	<!-- Zip Dropdown Ends -->
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>

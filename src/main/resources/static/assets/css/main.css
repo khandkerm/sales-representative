@@ -1,0 +1,48 @@
+/* Designation Hierarchy */
+
+.designationHierarchy {
+    margin-left: auto;
+    text-align: center;
+    align-items: center;
+    margin-right: 20vw;
+}
+
+
+/* DesignationHierarchy  */
+
+input {
+    height: 30px;
+    flex: 0 0 300px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border: 2px solid #9fbdcc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+button {
+    background-color: #325CDA;
+    border: none;
+    color: white;
+    padding: 9px 12px 9px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-right: auto;
+    margin-top: 5px;
+}
+
+button:hover {
+    background-color: #020202d7;
+
+}
+.table{
+    color: black;
+
+}

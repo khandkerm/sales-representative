@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Store Allocation</title>
+<meta charset="utf-8">
+<meta name="viewport"
+ content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<link rel="stylesheet"
+ href="/assets/bootstrap/css/bootstrap.min.css?h=a9a31ec932de3114d9b1ed27688edc60">
+<link rel="stylesheet"
+ href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+<link rel="stylesheet"
+ href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<link rel="stylesheet"
+ href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+ integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+ crossorigin="anonymous">
+<!-- new added -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous" /> -->
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css"
+ integrity="sha512-ARJR74swou2y0Q2V9k0GbzQ/5vJ2RBSoCWokg4zkfM29Fb3vZEQyv0iWBMW/yvKgyHSR/7D64pFMmU8nYmbRkg=="
+ crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css"
+ href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+<!-- new added -->
+<script
+ src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+<script
+ src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+    </script>
+<!-- ===== CSS ===== -->
+<link rel="stylesheet" href="/assets/css/products.css">
+<style type="text/css">
+
+#collapseA::after {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+#collapseB::after {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+
+</style>
+<!-- Icon link added -->
+<script src="https://kit.fontawesome.com/c598047e8f.js"
+ crossorigin="anonymous"></script>
+<script src="/assets/js/storeAllocation.js"></script>
+<style>
+#btnSub {
+	line-height: 2.3rem;
+	font-weight: normal;
+	color: white;
+	padding: 1px 6px 1px 6px;
+	background: rgb(0, 123, 255);
+	border: none;
+	border-radius: .3rem;
+	text-align: center;
+	text-decoration: none;
+	justify-content: center;
+	width: 5rem;
+	margin: 1rem auto;
+	display: flex;
+	align-items: center;
+}
+
+</style>
+</head>
+<body id="page-top">
+ <div id="wrapper">
+  <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion p-0 mr-3">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a th:href="@{'/Admin/' }" class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0">
+                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
+                    <div class="sidebar-brand-text mx-3"><span>Akij Group</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                  <ul class="nav navbar-nav text-light" id="accordionSidebar">
+					<li class="nav-item"><a th:href="@{'/SignUp/' }" class="nav-link"><i
+								class="fas fa-user-circle"></i>&nbsp;&nbsp;<span>Sign Up</span></a></li>
+					<li class="nav-item"><a th:href="@{'/Admin/' }" class="nav-link"><i
+								class="fas fa-tachometer-alt"></i>&nbsp;&nbsp;<span>Dashboard</span></a></li>
+					<li class="nav-item"><a th:href="@{'/Employee_show/' }" class="nav-link"><i
+								class="fas fa-user"></i>&nbsp;&nbsp;<span>Employee</span></a></li>
+					<li class="nav-item"><a th:href="@{'/level1/' }" class="nav-link"><i
+								class="fas fa-box-open"></i>&nbsp;&nbsp;<span>Products</span></a></li>
+								
+					<li class="nav-item" style="padding-right: 0rem!important; margin-right: 0rem!important;">
+                        <a class="nav-link collapsed active" id="collapseA" data-toggle="collapse" href="#collapseList"
+                            role="button" aria-expanded="false" aria-controls="collapseList"><i
+                                class="fas fa-store"></i>&nbsp;&nbsp;<span>Store</span>
+                        </a>
+                        <div class="collapse" id="collapseList"
+                            style="padding-right: 0rem!important; margin-right: 0rem!important;  position: initial;">
+                            <ul class="nav navbar-nav text-light" style=" padding: 0rem!important;">
+                                <li class="nav-item" style=" list-style: none;">
+                                    <a class="nav-link" th:href="@{'/storedetails' }"> <i
+                                            class="fa fa-list-alt"></i>&nbsp;&nbsp;<span>Store Details</span></a>
+                                </li>
+                                <li class="nav-item" style=" list-style: none; "><a class="nav-link active"
+                                        th:href="@{'/storeAllocationDetails' }"><i
+                                            class="fa fa-list-alt"></i>&nbsp;&nbsp;<span>Store Allocation
+                                            Details</span></a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <!--hierarchy -->
+                    
+                    <li class="nav-item" style="padding-right: 0rem!important; margin-right: 0rem!important;">
+                        <a class="nav-link collapsed" id="collapseB" data-toggle="collapse" href="#collapseList1"
+                            role="button" aria-expanded="false" aria-controls="collapseList1"><i
+                                class="fa fa-sitemap"></i>&nbsp;&nbsp;<span>Hierarchy</span>
+                        </a>
+                        <div class="collapse" id="collapseList1"
+                            style="padding-right: 0rem!important; margin-right: 0rem!important;  position: initial;">
+                            <ul class="nav navbar-nav text-light" style=" padding: 0rem!important;">
+                                <li class="nav-item" style=" list-style: none;">
+                                    <a class="nav-link" th:href="@{'/productHierarchy' }"> <i
+                                            class="fas fa-box-open"></i>&nbsp;&nbsp;<span>Product Hierarchy</span></a>
+                                </li>
+                                <li class="nav-item" style=" list-style: none; "><a class="nav-link"
+                                        th:href="@{'/designationHierarchy' }"><i class="fas fa-id-card"></i>&nbsp;&nbsp;<span>Designation Hierarchy
+                                            </span></a> </li>
+                                 <li class="nav-item" style=" list-style: none; "><a class="nav-link"
+                                        th:href="@{'/locationHierarchy1' }"><i
+                                            class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;<span>Location Hierarchy
+                                            </span></a> </li>
+                            </ul>
+                        </div>
+                    </li>
+				
+					
+
+				</ul>
+                <div class="text-center d-none d-md-inline"></div>
+            </div>
+        </nav>
+  <div class="d-flex flex-column" id="content-wrapper">
+   <div id="content">
+    <nav
+     class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+     <div class="container-fluid">
+      <button class="btn btn-link rounded-circle mr-3"
+       data-bs-hover-animate="swing" id="sidebarToggleTop" type="button">
+       <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav navbar-nav flex-nowrap ml-auto">
+       <li class="nav-item dropdown no-arrow mx-1">
+        <div class="nav-item dropdown no-arrow">
+         <a class="dropdown-toggle nav-link" data-toggle="dropdown"
+          aria-expanded="false" href="#"><span
+          class="badge badge-danger badge-counter">3+</span><i
+          class="fas fa-bell fa-fw"></i></a>
+         <div
+          class="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in">
+          <h6 class="dropdown-header">alerts center</h6>
+          <a class="d-flex align-items-center dropdown-item" href="#">
+           <div class="mr-3">
+            <div class="bg-primary icon-circle">
+             <i class="fas fa-file-alt text-white"></i>
+            </div>
+           </div>
+           <div>
+            <span class="small text-gray-500">December 12, 2019</span>
+            <p>A new monthly report is ready to download!</p>
+           </div>
+          </a> <a class="d-flex align-items-center dropdown-item" href="#">
+           <div class="mr-3">
+            <div class="bg-success icon-circle">
+             <i class="fas fa-donate text-white"></i>
+            </div>
+           </div>
+           <div>
+            <span class="small text-gray-500">December 7, 2019</span>
+            <p>$290.29 has been deposited into your account!</p>
+           </div>
+          </a> <a class="d-flex align-items-center dropdown-item" href="#">
+           <div class="mr-3">
+            <div class="bg-warning icon-circle">
+             <i class="fas fa-exclamation-triangle text-white"></i>
+            </div>
+           </div>
+           <div>
+            <span class="small text-gray-500">December 2, 2019</span>
+            <p>Spending Alert: We've noticed unusually high spending
+             for your account.</p>
+           </div>
+          </a><a class="text-center dropdown-item small text-gray-500"
+           href="#">Show All Alerts</a>
+         </div>
+        </div>
+       </li>
+       <li class="nav-item dropdown no-arrow mx-1">
+        <div class="nav-item dropdown no-arrow">
+         <a class="dropdown-toggle nav-link" data-toggle="dropdown"
+          aria-expanded="false" href="#"><i
+          class="fas fa-envelope fa-fw"></i><span
+          class="badge badge-danger badge-counter">7</span></a>
+         <div
+          class="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in">
+          <h6 class="dropdown-header">alerts center</h6>
+          <a class="d-flex align-items-center dropdown-item" href="#">
+           <div class="dropdown-list-image mr-3">
+            <img class="rounded-circle"
+             src="/assets/img/avatars/avatar4.jpeg?h=fefb30b61c8459a66bd338b7d790c3d5">
+            <div class="bg-success status-indicator"></div>
+           </div>
+           <div class="font-weight-bold">
+            <div class="text-truncate">
+             <span>Hi there! I am wondering if you can help me
+              with a problem I've been having.</span>
+            </div>
+            <p class="small text-gray-500 mb-0">Emily Fowler - 58m</p>
+           </div>
+          </a> <a class="d-flex align-items-center dropdown-item" href="#">
+           <div class="dropdown-list-image mr-3">
+            <img class="rounded-circle"
+             src="/assets/img/avatars/avatar2.jpeg?h=5d142be9441885f0935b84cf739d4112">
+            <div class="status-indicator"></div>
+           </div>
+           <div class="font-weight-bold">
+            <div class="text-truncate">
+             <span>I have the photos that you ordered last month!</span>
+            </div>
+            <p class="small text-gray-500 mb-0">Jae Chun - 1d</p>
+           </div>
+          </a> <a class="d-flex align-items-center dropdown-item" href="#">
+           <div class="dropdown-list-image mr-3">
+            <img class="rounded-circle"
+             src="/assets/img/avatars/avatar3.jpeg">
+            <div class="bg-warning status-indicator"></div>
+           </div>
+           <div class="font-weight-bold">
+            <div class="text-truncate">
+             <span>Last month's report looks great, I am very
+              happy with the progress so far, keep up the good work!</span>
+            </div>
+            <p class="small text-gray-500 mb-0">Morgan Alvarez - 2d</p>
+           </div>
+          </a> <a class="d-flex align-items-center dropdown-item" href="#">
+           <div class="dropdown-list-image mr-3">
+            <img class="rounded-circle"
+             src="/assets/img/avatars/avatar4.jpeg">
+            <div class="bg-success status-indicator"></div>
+           </div>
+           <div class="font-weight-bold">
+            <div class="text-truncate">
+             <span>Am I a good boy? The reason I ask is because
+              someone told me that people say this to all dogs, even if
+              they aren't good...</span>
+            </div>
+            <p class="small text-gray-500 mb-0">Chicken the Dog · 2w</p>
+           </div>
+          </a><a class="text-center dropdown-item small text-gray-500"
+           href="#">Show All Alerts</a>
+         </div>
+        </div>
+        <div
+         class="shadow dropdown-list dropdown-menu dropdown-menu-right"
+         aria-labelledby="alertsDropdown"></div>
+       </li>
+       <div class="d-none d-sm-block topbar-divider"></div>
+       <li class="nav-item dropdown no-arrow">
+        <div class="nav-item dropdown no-arrow">
+         <a class="dropdown-toggle nav-link" data-toggle="dropdown"
+          aria-expanded="false" href="#"><span
+          class="d-none d-lg-inline mr-2 text-gray-600 small">Mr.
+           Bob Max</span><img class="border rounded-circle img-profile"
+          src="/assets/img/avatars/avatar4.jpeg"></a>
+         <div
+          class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
+          <a class="dropdown-item" href="#"><i
+           class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a
+           class="dropdown-item" href="#"><i
+           class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
+          <a class="dropdown-item" href="#"><i
+           class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity
+           log</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#"><i
+           class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+         </div>
+        </div>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <div class="container-fluid">
+     <h3 class="responsive mb-3 pl-0"
+      style="font-weight: normal; color: #5a5c69 !important;">Store
+      Allocation</h3>
+     <!-- <div class="row">
+                        <p class="right my-2 mb-2"><b>Total Products:</b></p><input class="my-2 mb-2 mr-3" type="text" id="productCount" value="0" style="width:3rem;" disabled>
+                    </div> -->
+     <div class="row text-dark mt-2">
+      <div class="col-xl-6 col-lg-5 col-md-12 col-sm-12 mb-3">
+       <div class="form-group">
+        <label for="EMP_ID" th:if="${check} == 0"
+         style="float: left; margin-top: 0.4rem;"> <b>
+          Employee: </b>
+        </label>
+        <!-- 								<input class="form-control my-2 mb-2 mr-3" type="text" required -->
+        <!-- 									style="margin-left: 1rem; border: 1px solid #ced4da; border-radius: 3px; line-height: 2rem; width: auto !important"> -->
+        <span
+         style="display: block; overflow: hidden; padding: 0px 4px 0px 6px;">
+         <select
+         style="border: 1px solid #ced4da; border-radius: 3px; line-height: 2rem; width: 100% !important"
+         th:if="${check} == 0" name="EMP_ID" class="form-control"
+         id="emp_id" th:disabled="${check}">
+          <option value='0'>Select Employee</option>
+          <option th:each="p : ${showList_emp}" th:value="${p.EMP_ID}"
+           th:text="${p.EMP_NAME}" />
+        </select>
+        </span>
+       </div>
+       <div class="card shadow">
+        <div class="card-header text-center" id="prosidenav">
+         <div class="row">
+          <div class="col">
+           <b> Store Location</b>
+          </div>
+         </div>
+        </div>
+        <div class="card-body">
+         <form th:action=" @{/storeAllocation}" method="post"
+          th:object="${insert_emp_store}">
+          <div class="form-row my-3">
+           <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+            <label for="">National</label> <select name="N_id"
+             class="form-control" id="national_id"
+             th:disabled="${check}">
+             <option value='0'>Select National</option>
+             <option th:each="p : ${showList_store_no_parent}"
+              th:selected="(${p.DB_POINT_ID} == *{N_id})"
+              th:value="${p.DB_POINT_ID}"
+              th:text="${p.DB_POINT_DESCR}" />
+            </select>
+           </div>
+           <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+            <label for="">Area</label> <select name="A_id"
+             class="form-control" id="Area_id" th:disabled="${check}">
+             <option value='0'>Select Area</option>
+            </select>
+           </div>
+          </div>
+          <div class="form-row my-3">
+           <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+            <label for="">Territory</label> <select name="T_id"
+             class="form-control" id="Territory_id"
+             th:disabled="${check}">
+             <option value='0'>Select Territory</option>
+            </select>
+           </div>
+           <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+            <label for="">Dealer</label> <select name="D_id"
+             class="form-control" id="Dealer_id" th:disabled="${check}">
+             <option value='0'>Select Dealer</option>
+            </select>
+           </div>
+          </div>
+          <div class="form-row my-3">
+           <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+            <label for="">Beat</label> <select name="B_id"
+             class="form-control" id="Beat_id" th:disabled="${check}">
+             <option value='0'>Select Beat</option>
+            </select>
+           </div>
+           <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+            <label for="">Market</label> <select name="M_id"
+             class="form-control" id="Market_id" th:disabled="${check}">
+             <option value='0'>Select Market</option>
+            </select>
+           </div>
+          </div>
+          <div class="col center1">
+           <input class="btn btn-primary" type="submit" value="Done" th:if="${check} !=0"
+            onclick="" style="border-radius: 0.3rem;" />
+          </div>
+         </form>
+        </div>
+       </div>
+      </div>
+      <div class="col-xl-6 col-lg-7 col-md-12 col-sm-12 mb-3 mt-3">
+       <div class="card shadow">
+        <div class="card-header text-center" id="prosidenav">
+         <div class="row">
+          <div class="col">
+           <b> Store List</b>
+          </div>
+         </div>
+        </div>
+        <div class="card-body">
+         <div class="card" id="storeTable"
+          style="overflow-x: auto !important; background-color: transparent;">
+          <table class="table mt-5" id="myTable">
+           <thead class="text-center">
+            <tr class="">
+             <th scope="col" style="width: 10px"><input
+              type="checkbox" id="select_all" /></th>
+             <th scope="col">ID</th>
+             <th scope="col">Store</th>
+            </tr>
+           </thead>
+           <tbody>
+           </tbody>
+          </table>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <a class="border rounded d-inline scroll-to-top " href="#page-top "><i
+      class="fas fa-angle-up "></i></a>
+    </div>
+    <!--===== MAIN JS =====-->
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js "
+     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj "
+     crossorigin="anonymous "></script>
+    <script
+     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+    <script type="text/javascript" charset="utf8"
+     src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script
+     src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js "></script>
+    <script
+     src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js "></script>
+    <script
+     src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js "></script>
+    <script src="/assets/js/script.min.js"></script>
+    <script
+     src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"
+     integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg=="
+     crossorigin="anonymous"></script>
+    
+    <!-- Area dropdown -->
+    <script>
+			$(document)
+					.ready(
+							function() {
+								$("#national_id")
+										.change(
+												function() {
+
+													$("#Area_id").empty();
+
+													var x = $("#national_id").val();
+													console.log(x);
+
+													if (x == "0") {
+														$("#Area_id").empty();
+														$("<option>")
+																.val("0")
+																.text(
+																		"Select Area")
+																.appendTo(
+																		Area_Dropdown);
+													} else {
+
+														var urlString = "http://localhost:8089/area/"
+																+ x;
+														console.log(urlString);
+
+														$
+																.ajax(
+																		{
+																			method : "GET",
+																			url : urlString
+																		})
+																.done(
+																		function(
+																				responseJson) {
+
+																			Area_Dropdown = $("#Area_id");
+
+																			$(
+																					"<option>")
+																					.val(
+																							"0")
+																					.text(
+																							"Select Area")
+																					.appendTo(
+																							Area_Dropdown);
+																			$
+																					.each(
+																							responseJson,
+																							function(
+																									index,
+																									parent) {
+
+																								$(
+																										"<option>")
+																										.val(
+																												parent.db_POINT_ID)
+																										.text(
+																												parent.db_POINT_DESCR)
+																										.appendTo(
+																												Area_Dropdown);
+																							});
+																		})
+																.fail(
+																		function() {
+																			alert("Connection Error");
+																		})
+													}
+
+												})
+							})
+		</script>
+    <!-- Territory Dropdown starts -->
+    <script>
+			$(document)
+					.ready(
+							function() {
+								$("#Area_id")
+										.change(
+												function() {
+
+													$("#Territory_id").empty();
+
+													var x = $("#Area_id").val();
+													console.log(x);
+
+													if (x == "0") {
+														$("#Territory_id").empty();
+														$("<option>")
+																.val("0")
+																.text(
+																		"Select Territory")
+																.appendTo(
+																		Territory_Dropdown);
+													} else {
+
+														var urlString = "http://localhost:8089/territory/"
+																+ x;
+														console.log(urlString);
+
+														$
+																.ajax(
+																		{
+																			method : "GET",
+																			url : urlString
+																		})
+																.done(
+																		function(
+																				responseJson) {
+
+																			Territory_Dropdown = $("#Territory_id");
+
+																			$(
+																					"<option>")
+																					.val(
+																							"0")
+																					.text(
+																							"Select Territory")
+																					.appendTo(
+																							Territory_Dropdown);
+																			$
+																					.each(
+																							responseJson,
+																							function(
+																									index,
+																									parent) {
+
+																								$(
+																										"<option>")
+																										.val(
+																												parent.db_POINT_ID)
+																										.text(
+																												parent.db_POINT_DESCR)
+																										.appendTo(
+																												Territory_Dropdown);
+																							});
+																		})
+																.fail(
+																		function() {
+																			alert("Connection Error");
+																		})
+													}
+
+												})
+							})
+		</script>
+    <!-- Territory Dropdown ends -->
+    <!-- Dealer Dropdown starts -->
+    <script>
+			$(document)
+					.ready(
+							function() {
+								$("#Territory_id")
+										.change(
+												function() {
+
+													$("#Dealer_id").empty();
+
+													var x = $("#Territory_id").val();
+													console.log(x);
+
+													if (x == "0") {
+														$("#Dealer_id").empty();
+														$("<option>")
+																.val("0")
+																.text(
+																		"Select Territory")
+																.appendTo(
+																		Dealer_Dropdown);
+													} else {
+
+														var urlString = "http://localhost:8089/dealer/"
+																+ x;
+														console.log(urlString);
+
+														$
+																.ajax(
+																		{
+																			method : "GET",
+																			url : urlString
+																		})
+																.done(
+																		function(
+																				responseJson) {
+
+																			Dealer_Dropdown = $("#Dealer_id");
+
+																			$(
+																					"<option>")
+																					.val(
+																							"0")
+																					.text(
+																							"Select Dealer")
+																					.appendTo(
+																							Dealer_Dropdown);
+																			$
+																					.each(
+																							responseJson,
+																							function(
+																									index,
+																									parent) {
+
+																								$(
+																										"<option>")
+																										.val(
+																												parent.db_POINT_ID)
+																										.text(
+																												parent.db_POINT_DESCR)
+																										.appendTo(
+																												Dealer_Dropdown);
+																							});
+																		})
+																.fail(
+																		function() {
+																			alert("Connection Error");
+																		})
+													}
+
+												})
+							})
+		</script>
+    <!-- Dealer Dropdown ends -->
+    <!-- Beat Dropdown Starts -->
+    <script>
+			$(document)
+					.ready(
+							function() {
+								$("#Dealer_id")
+										.change(
+												function() {
+
+													$("#Beat_id").empty();
+
+													var x = $("#Dealer_id").val();
+													console.log(x);
+
+													if (x == "0") {
+														$("#Beat_id").empty();
+														$("<option>")
+																.val("0")
+																.text(
+																		"Select Beat")
+																.appendTo(
+																		Beat_Dropdown);
+													} else {
+
+														var urlString = "http://localhost:8089/beat/"
+																+ x;
+														console.log(urlString);
+
+														$
+																.ajax(
+																		{
+																			method : "GET",
+																			url : urlString
+																		})
+																.done(
+																		function(
+																				responseJson) {
+
+																			Beat_Dropdown = $("#Beat_id");
+
+																			$(
+																					"<option>")
+																					.val(
+																							"0")
+																					.text(
+																							"Select Beat")
+																					.appendTo(
+																							Beat_Dropdown);
+																			$
+																					.each(
+																							responseJson,
+																							function(
+																									index,
+																									parent) {
+
+																								$(
+																										"<option>")
+																										.val(
+																												parent.db_POINT_ID)
+																										.text(
+																												parent.db_POINT_DESCR)
+																										.appendTo(
+																												Beat_Dropdown);
+																							});
+																		})
+																.fail(
+																		function() {
+																			alert("Connection Error");
+																		})
+													}
+
+												})
+							})
+		</script>
+    <!-- Beat Dropdown ends -->
+    <!-- Market Dropdown starts -->
+    <script>
+			$(document)
+					.ready(
+							function() {
+								$("#Beat_id")
+										.change(
+												function() {
+
+													$("#Market_id").empty();
+
+													var x = $("#Beat_id").val();
+													console.log(x);
+
+													if (x == "0") {
+														$("#Market_id").empty();
+														$("<option>")
+																.val("0")
+																.text(
+																		"Select Market")
+																.appendTo(
+																		Market_Dropdown);
+													} else {
+
+														var urlString = "http://localhost:8089/market/"
+																+ x;
+														console.log(urlString);
+
+														$
+																.ajax(
+																		{
+																			method : "GET",
+																			url : urlString
+																		})
+																.done(
+																		function(
+																		
+																				responseJson) {
+																				
+
+																			Market_Dropdown = $("#Market_id");
+
+																			$(
+																					"<option>")
+																					.val(
+																							"0")
+																					.text(
+																							"Select Market")
+																					.appendTo(
+																							Market_Dropdown);
+																			$
+																					.each(
+																							responseJson,
+																							function(
+																									index,
+																									parent) {
+
+																								$(
+																										"<option>")
+																										.val(
+																												parent.db_POINT_ID)
+																										.text(
+																												parent.db_POINT_DESCR)
+																										.appendTo(
+																												Market_Dropdown);
+																							});
+																		})
+																.fail(
+																		function() {
+																			alert("Connection Error");
+																		})
+													}
+
+												})
+							})
+		</script>
+    <!-- Market Dropdown ends -->
+   
+    <!-- Store Dropdown ends -->
+    <script th:inline="javascript">
+		
+		$(document).ready(function(){
+		
+		console.log("asfdf");
+		
+		var list = /*[[${billCycleList}]]*/ 'default';
+		
+		console.log(list);
+		
+		console.log(list.length);
+		
+		for (i = 0; i < list.length; i++) {
+		console.log(i);
+	    $('#myTable > tbody:last-child').append('<tr><td style="width:10px"> <input class="checkbox" style="margin-left:0px" type="checkbox" id="c_'+i+'" /></td> <td class="text-center" id="c_'+i+'_'+list[i].db_POINT_ID+'">' + list[i].db_POINT_ID + '</td> <td class="text-center" id="c_'+i+'_'+list[i].db_POINT_DESCR+'">' + list[i].db_POINT_DESCR + '</td></tr>');
+
+	  }
+		  $('#storeTable').append('<button class="" id="btnSub" onClick="func()">Submit</button>');
+		
+		});
+		 
+		
+		
+		</script>
+    <script th:inline="javascript">
+
+
+var select_all = document.getElementById("select_all"); //select all checkbox
+var checkboxes = document.getElementsByClassName("checkbox"); //checkbox items
+
+//select all checkboxes
+select_all.addEventListener("change", function(e){
+	for (i = 0; i < checkboxes.length; i++) { 
+		checkboxes[i].checked = select_all.checked;
+	}
+});
+
+
+for (var i = 0; i < checkboxes.length; i++) {
+	checkboxes[i].addEventListener('change', function(e){ //".checkbox" change 
+		//uncheck "select all", if one of the listed checkbox item is unchecked
+		if(this.checked == false){
+			select_all.checked = false;
+		}
+		//check "select all" if all checkbox items are checked
+		if(document.querySelectorAll('.checkbox:checked').length == checkboxes.length){
+			select_all.checked = true;
+		}
+	});
+}
+
+
+
+function func(){
+
+console.log("N");
+
+	
+	
+	var len = /*[[${len}]]*/ 'default';
+    //console.log(len);
+    
+//     var $boxes = $('input[name=checkbox]:checked');
+    
+//     console.log($boxes);
+    
+    
+//     console.log("N")
+//     console.log($boxes.length);
+
+
+var list = /*[[${billCycleList}]]*/ 'default';
+
+
+
+console.log(list);
+
+// 1st way   
+
+let store_id_val=[];
+
+
+    for(var i=0; i<list.length; i++){
+    
+    	
+    	 store_id = list[i].db_POINT_ID;
+    	 
+    	 
+    	if($('#c_'+i).is(':checked')){
+
+    		var store_id_val1 = $('#c_'+i+'_'+store_id).text();
+
+    		store_id_val.push(store_id_val1);
+  		
+    	} 
+    }
+    
+ 
+    console.log(store_id_val);
+
+	var emp_id = $('#emp_id').val();
+	
+	console.log(emp_id);
+    
+    
+        		var urlString1 = "http://localhost:8089/store_emp/" +emp_id+"_"+ store_id_val;
+                            
+                            console.log(urlString1);
+                            
+                            
+                            $.ajax({
+                                    method: "GET",
+                                    url: urlString1
+                                })
+                                .done(function(responseJson) {
+                                //alert('div:'+ div_val + '  bill:' + bill_val + '  book:' + book_val + '  acc:' + acc_val + '  cust:'+cust_val);
+                                
+                                	//$('#r_id').show();
+                                	
+                                	//$('#run_id').text(responseJson);
+                                	
+                                	//alert(responseJson);
+                                	
+                                	//window.location.href = "http://103.123.11.173:9910/truncate";
+                                	
+                               window.location.href = "http://localhost:8089/storeAllocationDetails";
+                                })
+                                .fail(function() {
+                                    alert("Connection Error1");
+                                })
+
+}
+
+
+</script>
+
+
+<script>
+          $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+                </script>
+
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+    /* Admin page  */
+    
+    .brg {
+        padding: 20px;
+    }
+    
+    .navbar {
+        background-color: #11101D;
+    }
+    
+   /*Navbar changed effect*/
+
+	.navbar-nav li a{
+	transition: all 2s;
+}
+
+.navbar-nav li a:after {
+  text-align: left;
+  margin: 0;
+  opacity: 0;
+}
+
+.navbar-nav li a:hover{
+  background-color: rgb(0, 128, 255);
+  z-index: 1;
+}
+
+.navbar-nav li a:hover:after {
+  z-index: -10;
+  animation: fill 1s forwards;
+  -webkit-animation: fill 1s forwards;
+  -moz-animation: fill 1s forwards;
+  opacity: 1;
+}
+
+
+.collapse ul li>a{
+  
+  background-color: initial !important;
+}
+
+.collapse ul li>a:hover{
+  
+  color: red !important;
+  transition: all 2s;
+}
+
+    .button-align {
+        border-radius: 5px;
+        margin-left: auto;
+        margin-right: 5px;
+    }
+    
+    .button-align:hover {
+        background-color: black;
+    }
+    /* product css  */
+    
+    #rowColor {
+        background-color: rgb(0, 73, 73);
+        border: 2 px solid;
+    }
+    /* #prosidenav{
+    background-color: #F4F6FF;
+    padding: 15px;
+} */
+    
+    div.text {
+        margin-left: auto;
+        margin-right: 5vw;
+        background-color: #EAE7F9;
+        padding: 5px;
+        justify-content: space-between;
+    }
+    
+    .center1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .right {
+        margin-left: auto;
+        margin-right: 1vw;
+    }
+    
+    .middle {
+        margin-left: 28vw;
+        text-align: center;
+    }
+    
+    /* Product page  */
+
+    */
+  
+    /* location css */
+    
+    input {
+        height: 30px;
+        flex: 0 0 300px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        /* border-radius: 2px; */
+        padding: 10px;
+        justify-content: space-between;
+    }
+    
+    .button1 {
+        line-height: 2.5rem;
+        font-weight: normal;
+        color: white;
+        padding: 0 1rem;
+        background: rgb(0, 123, 255);
+        border: none;
+        border-radius: .2rem;
+        text-align: center;
+        text-decoration: none;
+        margin-left: 8vw;
+    }
+    
+    @media screen and (max-width: 1000px) {
+        #cardLoca {
+            /* overflow-x: auto; */
+            margin-right: 1rem;
+        }
+        input,
+        #hvalue {
+            width: 100% !important;
+            /* resize: vertical;
+            overflow-y: auto; */
+            /* border-radius: 2px; */
+        }
+    }

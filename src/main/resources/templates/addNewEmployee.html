@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>Add New Employee</title>
+<link rel="shortcut icon" type="imgae/jpg"
+	href="/assets/img/avatars/avatar1.jpeg">
+<link rel="stylesheet"
+	href="/assets/bootstrap/css/bootstrap.min.css?h=a9a31ec932de3114d9b1ed27688edc60">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+<!-- ===== CSS ===== -->
+<link rel="stylesheet" href="/assets/css/styles.css">
+<style type="text/css">
+
+#collapseA::after {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+#collapseB::after {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+
+</style>
+
+<!-- Icon link added -->
+<script src="https://kit.fontawesome.com/c598047e8f.js"
+	crossorigin="anonymous"></script>
+</head>
+
+<body id="page-top">
+	<div id="wrapper">
+		     <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion p-0 mr-3">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a th:href="@{'/Admin/' }" class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0">
+                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
+                    <div class="sidebar-brand-text mx-3"><span>Akij Group</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                  <ul class="nav navbar-nav text-light" id="accordionSidebar">
+					<li class="nav-item"><a th:href="@{'/SignUp/' }" class="nav-link"><i
+								class="fas fa-user-circle"></i>&nbsp;&nbsp;<span>Sign Up</span></a></li>
+					<li class="nav-item"><a th:href="@{'/Admin/' }" class="nav-link"><i
+								class="fas fa-tachometer-alt"></i>&nbsp;&nbsp;<span>Dashboard</span></a></li>
+					<li class="nav-item"><a th:href="@{'/Employee_show/' }" class="nav-link active"><i
+								class="fas fa-user"></i>&nbsp;&nbsp;<span>Employee</span></a></li>
+					<li class="nav-item"><a th:href="@{'/level1/' }" class="nav-link"><i
+								class="fas fa-box-open"></i>&nbsp;&nbsp;<span>Products</span></a></li>
+								
+					<li class="nav-item" style="padding-right: 0rem!important; margin-right: 0rem!important;">
+                        <a class="nav-link collapsed" id="collapseA" data-toggle="collapse" href="#collapseList"
+                            role="button" aria-expanded="false" aria-controls="collapseList"><i
+                                class="fas fa-store"></i>&nbsp;&nbsp;<span>Store</span>
+                        </a>
+                        <div class="collapse" id="collapseList"
+                            style="padding-right: 0rem!important; margin-right: 0rem!important;  position: initial;">
+                            <ul class="nav navbar-nav text-light" style=" padding: 0rem!important;">
+                                <li class="nav-item" style=" list-style: none;">
+                                    <a class="nav-link" th:href="@{'/storedetails' }"> <i
+                                            class="fa fa-list-alt"></i>&nbsp;&nbsp;<span>Store Details</span></a>
+                                </li>
+                                <li class="nav-item" style=" list-style: none; "><a class="nav-link"
+                                        th:href="@{'/storeAllocationDetails' }"><i
+                                            class="fa fa-list-alt"></i>&nbsp;&nbsp;<span>Store Allocation
+                                            Details</span></a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <!--hierarchy -->
+                    
+                    <li class="nav-item" style="padding-right: 0rem!important; margin-right: 0rem!important;">
+                        <a class="nav-link collapsed" id="collapseB" data-toggle="collapse" href="#collapseList1"
+                            role="button" aria-expanded="false" aria-controls="collapseList1"><i
+                                class="fa fa-sitemap"></i>&nbsp;&nbsp;<span>Hierarchy</span>
+                        </a>
+                        <div class="collapse" id="collapseList1"
+                            style="padding-right: 0rem!important; margin-right: 0rem!important;  position: initial;">
+                            <ul class="nav navbar-nav text-light" style=" padding: 0rem!important;">
+                                <li class="nav-item" style=" list-style: none;">
+                                    <a class="nav-link" th:href="@{'/productHierarchy' }"> <i
+                                            class="fas fa-box-open"></i>&nbsp;&nbsp;<span>Product Hierarchy</span></a>
+                                </li>
+                                <li class="nav-item" style=" list-style: none; "><a class="nav-link"
+                                        th:href="@{'/designationHierarchy' }"><i class="fas fa-id-card"></i>&nbsp;&nbsp;<span>Designation Hierarchy
+                                            </span></a> </li>
+                                 <li class="nav-item" style=" list-style: none; "><a class="nav-link"
+                                        th:href="@{'/locationHierarchy1' }"><i
+                                            class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;<span>Location Hierarchy
+                                            </span></a> </li>
+                            </ul>
+                        </div>
+                    </li>
+				
+					
+
+				</ul>
+                <div class="text-center d-none d-md-inline"></div>
+            </div>
+        </nav>
+		<div class="d-flex flex-column" id="content-wrapper">
+			<div id="content">
+				<nav
+					class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+					<div class="container-fluid">
+						<button class="btn btn-link rounded-circle mr-3"
+							id="sidebarToggleTop" type="button">
+							<i class="fas fa-bars"></i>
+						</button>
+						<ul class="nav navbar-nav flex-nowrap ml-auto">
+							<li class="nav-item dropdown no-arrow mx-1">
+								<div class="nav-item dropdown no-arrow">
+									<a class="dropdown-toggle nav-link" data-toggle="dropdown"
+										aria-expanded="false" href="#"><span
+										class="badge badge-danger badge-counter">3+</span><i
+										class="fas fa-bell fa-fw"></i></a>
+									<div
+										class="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in">
+										<h6 class="dropdown-header">alerts center</h6>
+										<a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="mr-3">
+												<div class="bg-primary icon-circle">
+													<i class="fas fa-file-alt text-white"></i>
+												</div>
+											</div>
+											<div>
+												<span class="small text-gray-500">December 12, 2019</span>
+												<p>A new monthly report is ready to download!</p>
+											</div>
+										</a> <a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="mr-3">
+												<div class="bg-success icon-circle">
+													<i class="fas fa-donate text-white"></i>
+												</div>
+											</div>
+											<div>
+												<span class="small text-gray-500">December 7, 2019</span>
+												<p>$290.29 has been deposited into your account!</p>
+											</div>
+										</a> <a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="mr-3">
+												<div class="bg-warning icon-circle">
+													<i class="fas fa-exclamation-triangle text-white"></i>
+												</div>
+											</div>
+											<div>
+												<span class="small text-gray-500">December 2, 2019</span>
+												<p>Spending Alert: We've noticed unusually high spending
+													for your account.</p>
+											</div>
+										</a><a class="text-center dropdown-item small text-gray-500"
+											href="#">Show All Alerts</a>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown no-arrow mx-1">
+								<div class="nav-item dropdown no-arrow">
+									<a class="dropdown-toggle nav-link" data-toggle="dropdown"
+										aria-expanded="false" href="#"><i
+										class="fas fa-envelope fa-fw"></i><span
+										class="badge badge-danger badge-counter">7</span></a>
+									<div
+										class="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in">
+										<h6 class="dropdown-header">alerts center</h6>
+										<a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="dropdown-list-image mr-3">
+												<img class="rounded-circle"
+													src="/assets/img/avatars/avatar4.jpeg?h=fefb30b61c8459a66bd338b7d790c3d5">
+												<div class="bg-success status-indicator"></div>
+											</div>
+											<div class="font-weight-bold">
+												<div class="text-truncate">
+													<span>Hi there! I am wondering if you can help me
+														with a problem I've been having.</span>
+												</div>
+												<p class="small text-gray-500 mb-0">Emily Fowler - 58m</p>
+											</div>
+										</a> <a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="dropdown-list-image mr-3">
+												<img class="rounded-circle"
+													src="/assets/img/avatars/avatar1.jpeg">
+												<div class="status-indicator"></div>
+											</div>
+											<div class="font-weight-bold">
+												<div class="text-truncate">
+													<span>I have the photos that you ordered last month!</span>
+												</div>
+												<p class="small text-gray-500 mb-0">Jae Chun - 1d</p>
+											</div>
+										</a> <a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="dropdown-list-image mr-3">
+												<img class="rounded-circle"
+													src="/assets/img/avatars/avatar3.jpeg?h=c5166867f10a4e454b5b2ae8d63268b3">
+												<div class="bg-warning status-indicator"></div>
+											</div>
+											<div class="font-weight-bold">
+												<div class="text-truncate">
+													<span>Last month's report looks great, I am very
+														happy with the progress so far, keep up the good work!</span>
+												</div>
+												<p class="small text-gray-500 mb-0">Morgan Alvarez - 2d</p>
+											</div>
+										</a> <a class="d-flex align-items-center dropdown-item" href="#">
+											<div class="dropdown-list-image mr-3">
+												<img class="rounded-circle"
+													src="/assets/img/avatars/avatar5.jpeg?h=35dc45edbcda6b3fc752dab2b0f082ea">
+												<div class="bg-success status-indicator"></div>
+											</div>
+											<div class="font-weight-bold">
+												<div class="text-truncate">
+													<span>Am I a good boy? The reason I ask is because
+														someone told me that people say this to all dogs, even if
+														they aren't good...</span>
+												</div>
+												<p class="small text-gray-500 mb-0">Chicken the Dog · 2w</p>
+											</div>
+										</a><a class="text-center dropdown-item small text-gray-500"
+											href="#">Show All Alerts</a>
+									</div>
+								</div>
+								<div
+									class="shadow dropdown-list dropdown-menu dropdown-menu-right"
+									aria-labelledby="alertsDropdown"></div>
+							</li>
+							<div class="d-none d-sm-block topbar-divider"></div>
+							<li class="nav-item dropdown no-arrow">
+								<div class="nav-item dropdown no-arrow">
+									<a class="dropdown-toggle nav-link" data-toggle="dropdown"
+										aria-expanded="false" href="#"><span
+										class="d-none d-lg-inline mr-2 text-gray-600 small">Valerie
+											Luna</span><img class="border rounded-circle img-profile"
+										src="/assets/img/avatars/avatar2.jpeg?h=0ecc82101fb9a10ca459432faa8c0656"></a>
+									<div
+										class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
+										<a class="dropdown-item" href="#"><i
+											class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a
+											class="dropdown-item" href="#"><i
+											class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
+										<a class="dropdown-item" href="#"><i
+											class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity
+											log</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#"><i
+											class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<div class="container-fluid">
+					<div
+						class="d-sm-flex justify-content-between align-items-center mb-4">
+						<h3 class="text-dark mb-0">Add New Employee</h3>
+					</div>
+
+					<div class="row text-dark">
+						<div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
+							<div class="row"></div>
+							<div class="card shadow" style="overflow-x: auto;">
+								<div class="card-body">
+									<form th:action="@{/Add_Employee}" method="post"
+										th:object="${insert_st}">
+										<div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+											<!--                                                 <label for="inputEmail4">Emplyee_Id</label> -->
+											<input hidden type="text" name="Employee_id"
+												th:value="*{Employee_id}" class="form-control">
+										</div>
+										<div class="form-row">
+											<div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+												<label for="inputEmail4">First Name</label> <input
+													type="text" name="Employee_name"
+													th:value="*{Employee_name}" class="form-control">
+											</div>
+											<div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+												<label for="inputEmail4">Last Name</label> <input
+													type="text" name="Shortname" th:value="*{Shortname}"
+													class="form-control">
+											</div>
+										</div>
+										<div class="form-row my-3">
+											<div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+												<label for="inputEmail4">Designation Description</label>
+												<!--                                                 <input type="text" name="Employee_name"class="form-control"> -->
+												<select name="Designation_code" class="form-control"
+													id="d_id">
+													<option value='0'>Select Designation</option>
+													<option th:each="p : ${showList_description}"
+														th:selected="(${p.DESIG_CODE} == *{Designation_code})"
+														th:value="${p.DESIG_CODE}" th:text="${p.DESIG_DESCR}" />
+												</select>
+											</div>
+
+											<div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+												<label for="inputEmail4">Parent Employee </label>
+												<!--                                                 <input type="text"  name="Parent_Emp_id"  th:value="*{Parent_Emp_id}" class="form-control"> -->
+												<select name="Parent_Emp_id" class="form-control" id="p_id">
+													<option value='0'>Select Parent EMP</option>
+													            <option th:each="p : ${ParentEmpList}"   th:selected="(${p.EMP_CODE} == *{Parent_Emp_id})"    th:value="${p.EMP_CODE}" th:text="${p.EMP_NAME}" />
+												</select>
+											</div>
+
+
+											<div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+												<!--                                                 <label for="inputEmail4">Employee Code </label> -->
+												<input hidden type="text" name="Employee_code"
+													th:value="*{Employee_code}" class="form-control">
+											</div>
+										</div>
+										<div class="form-row my-3">
+
+
+											<div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+												<label for="inputEmail4">Contact No.</label> <input
+													type="text" name="Mobile" th:value="*{Mobile}"
+													class="form-control">
+											</div>
+
+
+
+											<div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+												<label for="inputEmail4"> Email Address</label> <input
+													type="text" name="Email" th:value="*{Email}"
+													class="form-control">
+											</div>
+										</div>
+										<div class="form-row my-3">
+
+											<!-- <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6">
+                                                <label for="inputEmail4">Company Name</label>
+                                                <input type="text" class="form-control">
+                                            </div> -->
+										</div>
+										<div class="col center1 mt-3">
+											<input class="btn btn-primary" type="submit"
+												th:if="${flag == 0}" value="Add"
+												style="border-radius: 0.3rem;"></input> <input
+												class="btn btn-primary" type="submit"
+												th:formaction="@{'/edit/' + ${id}}" th:if="${flag == 1}"
+												value="Edit" style="border-radius: 0.3rem;"></input>
+
+										</div>
+
+									</form>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--===== MAIN JS =====-->
+		<script src="assets/js/main.js"></script>
+		<!-- Optional JavaScript; choose one of the two! -->
+
+		<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+			crossorigin="anonymous"></script>
+
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+		<script
+			src="/assets/js/script.min.js?h=af3a23ce326fbc8eb447b5418ddb619e"></script>
+
+
+
+
+
+
+		<!-- 		circle dropdown starts  -->
+		<script>
+			$(document)
+					.ready(
+							function() {
+								$("#d_id")
+										.change(
+												function() {
+
+													$("#p_id").empty();
+
+													var x = $("#d_id").val();
+													console.log(x);
+
+													if (x == "0") {
+														$("#p_id").empty();
+														$("<option>")
+																.val("0")
+																.text(
+																		"Select Parent Emp")
+																.appendTo(
+																		parent_emp_Dropdown);
+													} else {
+
+														var urlString = "http://localhost:8089/add_parent_emp/"
+																+ x;
+														console.log(urlString);
+
+														$
+																.ajax(
+																		{
+																			method : "GET",
+																			url : urlString
+																		})
+																.done(
+																		function(
+																				responseJson) {
+
+																			parent_emp_Dropdown = $("#p_id");
+
+																			$(
+																					"<option>")
+																					.val(
+																							"0")
+																					.text(
+																							"Select Parent EMP")
+																					.appendTo(
+																							parent_emp_Dropdown);
+																			$
+																					.each(
+																							responseJson,
+																							function(
+																									index,
+																									parent) {
+
+																								$(
+																										"<option>")
+																										.val(
+																												parent.emp_CODE)
+																										.text(
+																												parent.emp_NAME)
+																										.appendTo(
+																												parent_emp_Dropdown);
+																							});
+																		})
+																.fail(
+																		function() {
+																			alert("Connection Error");
+																		})
+													}
+
+												})
+							})
+		</script>
+		<!-- 		circle dropdown ends  -->
+</body>
+
+
+
+
+
+
+</html>

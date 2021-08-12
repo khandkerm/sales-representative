@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<title>Register - Brand</title>
+	<link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=a9a31ec932de3114d9b1ed27688edc60">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+	<!-- ===== CSS ===== -->
+	<link rel="stylesheet" href="/assets/css/styles.css">
+
+	<!-- Icon link added -->
+	<script src="https://kit.fontawesome.com/c598047e8f.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="" style="background-image: url(&quot;/assets/img/login/industry.jpg&quot;);">
+	<div class="container">
+		<div class="card shadow-lg o-hidden border-0 my-5">
+			<div class="card-body p-0">
+				<div class="row">
+					<div class="col-lg-5 d-none d-lg-flex">
+						<div class="flex-grow-1 bg-register-image"
+							style="background-image: url(&quot;/assets/img/login/registration.jpg&quot;);">
+						</div>
+					</div>
+					<div class="col-lg-7">
+						<div class="p-5">
+							<div class="text-center">
+								<h4 class="text-dark mb-4">Create an Account!</h4>
+							</div>
+							<form th:action="@{/SignUp}" class="user" method= "post" th:object="${insert_user}" oninput='password_repeat.setCustomValidity(password_repeat.value != emp_pass.value ? "Passwords do not match." : "")'>
+
+								<div class="form-group row">
+									<div class="col-sm-12 mb-3 mb-sm-0"><input class="form-control form-control-user"
+											type="text" id="exampleFirstName" placeholder="User Name" name="user_id"
+											th:value="*{user_id}" required>
+									</div>
+								</div>
+								<div class="form-group row">
+									<div class="col-sm-12 mb-3 mb-sm-0"><input class="form-control form-control-user"
+											type="text" id="exampleFirstName" placeholder="EMP Code" name="emp_code"
+											th:value="*{emp_code}" required></div>
+								</div>
+								<div class="form-group row">
+									<div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user"
+											type="password" id="examplePasswordInput" placeholder="Password"
+											name="emp_pass" th:value="*{emp_pass}" required></div>
+											
+									<div class="col-sm-6"><input class="form-control form-control-user" type="password"
+											id="exampleRepeatPasswordInput" placeholder="Repeat Password"
+											name="password_repeat"></div>
+								</div>
+								<button class="btn btn-primary btn-block text-white btn-user mt-4"
+									type="submit">Register Account</button>
+								<hr>
+							</form>
+
+							<div class="text-center"><a th:href="@{'/login/' }" class="small">Already have an account?
+									Login!!</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Optional JavaScript; choose one of the two! -->
+
+	<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+	<script src="/assets/js/script.min.js?h=af3a23ce326fbc8eb447b5418ddb619e"></script>
+</body>
+
+</html>

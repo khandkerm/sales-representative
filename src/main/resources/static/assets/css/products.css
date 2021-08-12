@@ -1,0 +1,119 @@
+    /* side bar  */
+    
+    * {
+        box-sizing: border-box;
+    }
+    /* .brg {
+        padding: 20px;
+    } */
+    
+    .navbar {
+        background-color: #11101D;
+        /* transition: 0.2s; */
+    }
+    /* .button-align {
+        border-radius: 5px;
+        margin-left: auto;
+        margin-right: 5px;
+    }
+    
+    .button-align:hover {
+        background-color: black;
+    } */
+    /* products css  */
+    
+    #rowColor {
+        background-color: rgb(0, 73, 73);
+        border: 2 px solid;
+    }
+    
+    div.text {
+        margin-left: auto;
+        margin-right: 5vw;
+        background-color: #EAE7F9;
+        padding: 5px;
+        justify-content: space-between;
+    }
+    
+    .center1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .right {
+        margin-left: auto;
+        margin-right: 1vw;
+    }
+    
+    .middle {
+        margin-left: 28vw;
+        text-align: center;
+    }
+    /* products.js  */
+    
+    .button2 {
+        line-height: 2rem;
+        font-weight: normal;
+        color: white;
+        padding: 0 .7rem;
+        background: rgb(0, 123, 255);
+        border: none;
+        border-radius: .2rem;
+        text-align: center;
+        text-decoration: none;
+        margin-right: 0.5rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .button3 {
+        line-height: 2rem;
+        font-weight: normal;
+        color: white;
+        padding: 0 .7rem;
+        background: #DC3545;
+        border: none;
+        border-radius: .2rem;
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    #productCount {
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom-style: hidden;
+        /* width: 2rem; */
+        text-align: center;
+    }
+    
+    .submitBTN {
+        line-height: 2.5rem;
+        font-weight: normal;
+        color: white;
+        padding: 1px 6px 1px 6px;
+        background: rgb(0, 123, 255);
+        border: none;
+        border-radius: .2rem;
+        text-align: center;
+        text-decoration: none;
+        justify-content: center;
+        width: 5rem;
+        margin: auto;
+        display: flex;
+        align-items: center;
+    }
+    
+    .inputFieldP {
+        /* width: 10rem;
+    margin-right: 2rem; */
+        text-align: center;
+    }
+    
+    td {
+        text-align: center;
+    }
+
+    /* tbody {
+        border-bottom: 12px solid white;
+    } */
